@@ -1,0 +1,212 @@
+#filter {
+    .popup__body {
+        padding: 80px 240px;
+        @media(max-width:1300px) {
+            padding: 80px 90px;
+        }
+        @media(max-width:767px) {
+            padding: 40px 50px;
+        }
+        @media(max-width:492px) {
+            padding: 40px 15px;
+        }
+
+    }
+
+    .popup__content {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 30px;
+
+    }
+
+    .close-popup {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+        svg path {
+            fill: #140C2D;
+        }
+    }
+
+    &__filter {}
+}
+
+.filter {
+
+    &__body {}
+
+    &__close {}
+
+    &__top {
+        margin-bottom: 23px;
+    }
+
+    &__title {
+        font-size: 48px;
+        font-family: 'IBMPlexMono';
+        font-weight: 700;
+        @media(max-width:992px) {
+            font-size: 32px;
+        }
+        @media(max-width:492px) {
+            font-size: 24px;
+        }
+    }
+
+    &__content {
+        height: 700px;
+        overflow: auto;
+        padding: 0px 30px 0px 20px;
+        margin-bottom: 30px;
+        &::-webkit-scrollbar {
+            background: #fff;
+            width: 12px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 12px;
+            background: #3E17B4;
+        }
+        @media(max-height:1000px) {
+            height: 600px;
+        }
+        @media(max-height:875px) {
+            height: 490px;
+        }
+        @media(max-height:775px) {
+            height: 390px;
+        }
+        @media(max-height:600px) {
+            height: 300px;
+            .filter__checkbox {
+                font-size: 18px;
+                
+            }
+        }
+        @media(max-height:490px) {
+            height: 180px;
+        }
+        @media(max-width:492px) {
+            padding: 0px 15px;
+        }
+    }
+
+    &__content-body {}
+
+    &__row {
+        // display: grid;
+        // display: flex;
+        // flex-wrap: wrap;
+        gap: 22px 50px;
+        // grid-template-columns: repeat(7, 1fr);
+        
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    &__item {}
+
+    &__checkbox {
+        font-family: "AnonymousPro";
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.005em;
+        position: relative;
+        display: inline-flex;
+        gap: 10px;
+        border-radius: 7px;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            width: 22px;
+            height: 22px;
+            flex: 0 0 22px;
+            border-radius: 7px;
+        }
+
+        &:before {
+            border: 1px solid #000000;
+            transition: all 0.3s ease 0s;
+
+        }
+
+        &:after {
+            transition: all 0.3s ease 0s;
+            transform: scale(0);
+            left: 0;
+            top: 0;
+            background-image: url(../img/icons/check.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            background-color: #57CB5B;
+        }
+
+        &._checked {
+            &:after {
+                transform: scale(1);
+            }
+
+            &:before {
+                border: 1px solid #fff;
+            }
+        }
+
+    }
+
+    &__bottom {}
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    &__button {}
+}
+
+.new-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #57CB5B;
+    border-radius: 40px;
+    font-size: 20px;
+    padding: 10px 30px;
+    line-height: 120%;
+    color: #383445;
+    font-weight: 500;
+    font-family: 'IBMPlexMono';
+    transition: all 0.3s ease 0s;
+    &:hover {
+        opacity: 0.8;
+    }
+    &_blue {
+        background: #3E17B4;
+        color: #F9F9F9;
+    }
+  
+    &_gray {
+        background-color: #747474;
+        color: #F9F9F9;
+        span {
+            background-color: #747474;
+            
+        }
+        
+    }
+  }
+
+  .header-top__button {
+    background: linear-gradient(0deg, #383445, #383445), linear-gradient(270deg, #67EE6B 0%, #3E17B4 100%);
+    @media(max-width:1200px) {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+  }
